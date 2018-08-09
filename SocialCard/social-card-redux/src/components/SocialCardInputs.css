@@ -1,0 +1,28 @@
+.card-inputs {
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  min-width: 500px; 
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-input-group label, .card-input-group input, .card-input-group textarea {
+  width: 40%;
+  padding: 5px;
+  margin: 5px 0;
+  resize: none;
+}
+
+.card-input-group label {
+  width: 30%;
+}
+
