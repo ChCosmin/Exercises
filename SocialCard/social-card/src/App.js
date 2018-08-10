@@ -2,43 +2,59 @@ import React, { Component } from 'react';
 import './App.css';
 import SocialCard from './components/SocialCard';
 import SocialCardInput from './components/SocialCardInputs';
+import faker from 'faker';
 
 class App extends Component {
-  state={
-    cardHeader: {      
-      avatarImg: 'http://icons.iconarchive.com/icons/martz90/circle/256/9gag-icon.png',
-      username: 'The Practical Dev',
-      text: 'Learning React? Start Small.',
-      date: 'Sep 10',
-      author: 'dceddia',
-    },
-    cardBanner: {
-      bannerIconText: 'DEV',
-      bannerIconTextColor: '#ffffff',
-      bannerIconColor: '#000000',
-
-      text: 'Learning React? Start Small. Learning React? Start Small.Learning React? Start.',
-      textColor: '#ffffff',
-      backgroundColor: '#ffa003',
-
-      author: 'Chinde Cosmin Aurel',
-      authorColor: "#ffa003",
-      authorBackground: "#ffffff",
-      authorImg: 'https://scontent.ftsr1-1.fna.fbcdn.net/v/t1.0-9/31699070_10215402312226896_6192456887863083008_n.jpg?_nc_cat=0&oh=9ff762f295393831b4ff7a5af56d8bdc&oe=5BC77113',
-
-      title: 'Learning React? Start Small',
-      summary: 'Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps. Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps. Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps. Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps.',
-      link: 'http://www.google.com'
-    },
-    cardButtons: {
-      comments: 2,
-      retweet: 47,
-      likes: 190,
-
-      commentsClicked: false,
-      retweetClicked: false,
-      likesClicked: false
+  buildFakeCard = () => {
+    const month = faker.date.month().substring(0,3);
+    const day = Math.floor(Math.random() * (31 - 1 + 1)) + 1;
+    const date = month + ' ' + day;
+    const iconText = faker.internet.userName().toUpperCase().substring(0,3);
+    const state = {
+      cardHeader: {      
+        avatarImg: faker.image.avatar(),
+        username: faker.internet.userName(),
+        text: faker.company.catchPhrase(),
+        date: date,
+        author: faker.lorem.word(),
+      },
+      cardBanner: {
+        bannerIconText: iconText,
+        bannerIconTextColor: faker.internet.color(),
+        bannerIconColor: faker.internet.color(),
+  
+        text: faker.lorem.sentence(),
+        textColor: faker.internet.color(),
+        backgroundColor: faker.internet.color(),
+  
+        author: faker.name.findName(),
+        authorColor: faker.internet.color(),
+        authorBackground: faker.internet.color(),
+        authorImg: faker.internet.avatar(),
+  
+        title: faker.company.catchPhrase(),
+        summary: faker.lorem.sentences(),
+        link: faker.internet.url()
+      },
+      cardButtons: {
+        comments: faker.random.number(),
+        retweet: faker.random.number(),
+        likes: faker.random.number(),
+  
+        commentsClicked: faker.random.boolean(),
+        retweetClicked: faker.random.boolean(),
+        likesClicked: faker.random.boolean()
+      }
     }
+    return state;
+  }
+
+  state = this.buildFakeCard();
+
+  generateCard = () => {
+    console.log('x')
+    const state = this.buildFakeCard();
+    this.setState({ cardHeader: state.cardHeader, cardBanner: state.cardBanner, cardButtons: state.cardButtons });
   }
 
   onClick = (e) => {
@@ -67,8 +83,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SocialCardInput onChange={this.onChange} />
-        <SocialCard onClick={this.onClick} header={this.state.cardHeader} banner={this.state.cardBanner} buttons={this.state.cardButtons}/>
+        <SocialCardInput header={this.state.cardHeader} banner={this.state.cardBanner} onChange={this.onChange} />
+        <SocialCard generateCard={this.generateCard} onClick={this.onClick} header={this.state.cardHeader} banner={this.state.cardBanner} buttons={this.state.cardButtons}/>
       </div>
     );
   }

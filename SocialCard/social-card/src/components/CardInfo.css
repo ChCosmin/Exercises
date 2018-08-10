@@ -29,6 +29,11 @@
   margin: 5px 0;
 }
 
+.card-info-info span {
+  color: lightgray;
+  font-weight: normal;
+}
+
 .card-info-arrow {
   width: 5%;
 }

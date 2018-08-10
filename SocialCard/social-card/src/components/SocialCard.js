@@ -27,6 +27,7 @@ class SocialCard extends React.Component {
           <CardBanner info={this.props.banner}/>
           <CardButtons onClick={this.props.onClick} info={this.props.buttons} />
         </Collapse>
+        <button className="generate-card-btn" onClick={this.props.generateCard}>Generate Card</button>
       </div>
     )
   };
