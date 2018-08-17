@@ -5,4 +5,17 @@
   padding: 10px 0;
   width: 100%;
   min-width: 750px;
+  text-align: center;
+}
+
+.generate-card-btn {
+  width: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ReactCollapse--collapse {
+  min-height: 600px;
 }

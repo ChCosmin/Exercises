@@ -1,10 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Collapse } from 'react-collapse';
 import './SocialCard.css';
 
 import CardInfo from './CardInfo';
 import CardBanner from './CardBanner';
 import CardButtons from './CardButtons';
+
+import { generateCard } from '../actions/actions';
+
+const mapDispatchToProps = dispatch => ({
+  generateCard: () => dispatch(generateCard())
+})
 
 class SocialCard extends React.Component {
   state={
@@ -14,6 +22,10 @@ class SocialCard extends React.Component {
   collapse = () => {
     this.setState({ isOpened: !this.state.isOpened })
   };
+
+  generateCard = () => {
+    this.props.generateCard();
+  }
 
   render() {
     return(
@@ -26,9 +38,14 @@ class SocialCard extends React.Component {
           <CardBanner />
           <CardButtons />
         </Collapse>
+        <button className="generate-card-btn" onClick={this.generateCard}>Generate Card</button>
       </div>
     )
   };
 };
 
-export default SocialCard;
+SocialCard.propTypes = {
+  generateCard: PropTypes.func.isRequired
+};
+
+export default connect(null, mapDispatchToProps)(SocialCard);
