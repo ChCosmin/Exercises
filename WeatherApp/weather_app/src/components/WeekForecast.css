@@ -1,0 +1,15 @@
+.week-forecast {
+  display: flex;
+  flex-direction: column;
+}
+
+.week-days {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.week-days li a {
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+.day-box {
+  width: 130px;
+  margin: 0 5px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 22px;
+}
+
+.day-name, .day-temp {
+  margin: 5px 0 0 0;
+}
+
+.day-name {
+  color: lightgray;
+}
+
+.day-icon {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.day-temp span {
+  margin: 0 3px;
+}
+
+.day-temp span:first-child {
+  color: lightblue;
+}
+
+.day-temp span:last-child {
+  color: orange;
+}
+
+.day-box:hover {
+  border: 1px solid lightgray;
+  background-color: #fcfcfc;
+}
+.day-box:hover > .day-name {
+  color: black;
+}
+.day-box:hover > .day-temp span:first-child {
+  color: blue;
+}
+.day-box:hover > .day-temp span:last-child {
+  color: red;
+}
+
+

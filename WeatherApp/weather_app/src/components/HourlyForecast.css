@@ -1,0 +1,56 @@
+.hourly-box {
+  border: 2px solid #222222;
+  border-radius: 10px;
+  width: 20rem;
+  display: flex;
+  margin: 50px auto;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.hourly-top {
+  width: 100%;
+}
+
+.hourly-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+}
+
+.hourly-heading {
+  font-size: 20px;
+  margin: 15px;
+}
+
+.hours {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.hour-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 25px;
+  border-bottom: 2px solid #222222;
+  border-radius: 0 0 10px 10px;
+}
+
+.hour-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.celsius {
+  width: 20px;
+  height: 20px;
+}
+
+.hour-box-heading {
+  border: 2px solid #222222;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 0;
+}
