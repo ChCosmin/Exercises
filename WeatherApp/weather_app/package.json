@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@vx/axis": "0.0.173",
+    "@vx/gradient": "0.0.165",
+    "@vx/group": "0.0.170",
+    "@vx/mock-data": "0.0.165",
+    "@vx/scale": "0.0.165",
+    "@vx/shape": "0.0.171",
     "es6-map": "^0.1.5",
     "moment": "^2.22.2",
     "react": "^16.4.2",

@@ -85,12 +85,13 @@ class WeekForecast extends React.Component {
         <ul className="week-days">
           {
             Object.keys(weatherRows).map(day => {
-              const icon = weather_icons[Math.floor(Math.random()*(16-0+1)+0)];
-              const weatherData = weatherRows[day];
-              const low  = this.getDayTemp(weatherRows[day], 'low');
-              const high = this.getDayTemp(weatherRows[day], 'high');
-              const data = { weatherData, low, high, day }
-              const dayName = day.replace(/ .*/, '');
+              const 
+                icon = weather_icons[Math.floor(Math.random()*(16-0+1)+0)],
+                weatherData = weatherRows[day],
+                low  = this.getDayTemp(weatherRows[day], 'low'),
+                high = this.getDayTemp(weatherRows[day], 'high'),
+                data = { weatherData, low, high, day },
+                dayName = day.replace(/ .*/, '');
 
               return <li key={`${dayName}-link`}><Link to={{ pathname: `/${dayName}`, state: data }}><DayForecast day={dayName} low={low} high={high} icon={icon}/></Link></li>              
             })
